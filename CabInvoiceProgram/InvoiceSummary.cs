@@ -27,9 +27,14 @@ namespace CabInvoiceProgram
         {
             this.numberOfRides = numberOfRides;
             this.totalFare = totalFare;
-            this.averageFare = totalFare / numberOfRides;
+            this.averageFare = this.totalFare / this.numberOfRides;
         }
-
+        public InvoiceSummary(int numberOfRides, double totalFare, double averageFare)
+        {
+            this.numberOfRides = numberOfRides;
+            this.totalFare = totalFare;
+            this.averageFare = averageFare;
+        }
         // Determines whether the specified ,is equal to this instance.
         //to compare with this instance.</param>
         // <returns>
@@ -47,6 +52,13 @@ namespace CabInvoiceProgram
             }
             InvoiceSummary imputedObject = (InvoiceSummary)obj;
             return this.numberOfRides == imputedObject.numberOfRides && this.totalFare == imputedObject.totalFare && this.averageFare == imputedObject.averageFare;
+        }
+        /// <summary>
+        /// It Returns a hashcode of instance.
+        /// </summary>
+        public override int GetHashCode()
+        {
+            return this.numberOfRides.GetHashCode() ^ this.totalFare.GetHashCode() ^ this.averageFare.GetHashCode();
         }
     }
 }

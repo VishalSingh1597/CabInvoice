@@ -20,12 +20,11 @@ namespace CabInvoiceProgram
         {
             Console.WriteLine("**********Welcome to Cab Invoice Program***********");
             //Creating Object
-            InvoiceGenerator invoiceGenerator = new InvoiceGenerator();
+            InvoiceGenerator invoiceGenerator = new InvoiceGenerator((RideType.NORMAL));
             //Calculate Fare double
             double fare = invoiceGenerator.CalculateFare(2.0, 5);
             Console.WriteLine($"Fare: {fare}");
-            InvoiceSummary invoiceTotalFare = new InvoiceSummary(3, 5);
-            Console.WriteLine(invoiceTotalFare);
+
             Console.ReadLine();
 
         }
