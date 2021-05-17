@@ -6,9 +6,22 @@ using System.Threading.Tasks;
 
 namespace CabInvoiceProgram
 {
+    /// <summary>
+    /// Custom exception for cab invoice program
+    /// </summary>
     public class CabInvoiceException : Exception
     {
-        // Enum for defining different type of custom exception       
+        // Enum for defining different type of custom exception
+        /// Enum of exception type.
+        public enum ExceptionType
+        {
+            INVALID_DISTANCE,
+            INVALID_TIME,
+            NULL_RIDES,
+            INVALID_USER_ID
+        }
+        /// creating type variable of type ExceptionType
+
         public ExceptionType type;
 
         // Initializes a new instance of the class.
@@ -17,9 +30,6 @@ namespace CabInvoiceProgram
         {
             this.type = type;
         }
-        public enum ExceptionType
-        {
-            INVALID_DISTANCE, INVALID_TIME, NULL_RIDES, INVALID_USER_ID
-        }
+
     }
 }

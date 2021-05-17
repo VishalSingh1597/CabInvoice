@@ -11,6 +11,11 @@ namespace CabInvoiceProgram
     /// </summary>
     public class Program
     {
+
+        /// <summary>
+        /// Defines Entry point of application
+        /// </summary>
+        /// <param name="args"></param>
         static void Main(string[] args)
         {
             Console.WriteLine("**********Welcome to Cab Invoice Program***********");
@@ -19,6 +24,8 @@ namespace CabInvoiceProgram
             //Calculate Fare double
             double fare = invoiceGenerator.CalculateFare(2.0, 5);
             Console.WriteLine($"Fare: {fare}");
+            InvoiceSummary invoiceTotalFare = new InvoiceSummary(3, 5);
+            Console.WriteLine(invoiceTotalFare);
             Console.ReadLine();
 
         }
